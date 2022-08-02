@@ -1,10 +1,13 @@
 const btnId = "xiao-yi-btn";
-const selectArea = (e) => {
+const deleteBtn = () => {
   // 删除原来的按钮
   const oldBtn = document.getElementById(btnId);
   if (oldBtn) {
     oldBtn.remove();
   }
+};
+const selectArea = (e) => {
+  deleteBtn();
   let text = "",
     selection = window.getSelection(),
     selectionCopy = {};
@@ -63,9 +66,5 @@ const selectArea = (e) => {
 document.querySelector("body").addEventListener("mouseup", selectArea);
 document.querySelector("body").addEventListener("dblclick", selectArea);
 document.querySelector("body").addEventListener("mousedown", function (e) {
-  // 删除原来的按钮
-  const oldBtn = document.getElementById(btnId);
-  if (oldBtn) {
-    oldBtn.remove();
-  }
+  deleteBtn();
 });
