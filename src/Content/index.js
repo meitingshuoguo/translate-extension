@@ -1,5 +1,3 @@
-// const btnId = "xiao-yi-btn";
-
 import React, { useEffect, useRef, useState } from "react";
 import style from "./index.module.css";
 
@@ -29,12 +27,8 @@ export default function Content() {
         ele.style.top = top + "px";
         setBtnTxt("翻译");
         setBtnClassName("translate");
+        setSelectedTxt(text);
       }
-    } else if (document.selection && document.selection.type !== "Control") {
-      text = document.selection.createRange().text;
-    }
-    if (text) {
-      setSelectedTxt(text);
     }
   };
 
@@ -51,7 +45,7 @@ export default function Content() {
   useEffect(() => {
     document.querySelector("body").addEventListener("mouseup", selectArea);
     document.querySelector("body").addEventListener("dblclick", selectArea);
-    document.querySelector("body").addEventListener("mousedown", function (e) {
+    document.querySelector("body").addEventListener("mousedown", function () {
       deleteBtn();
     });
   }, []);
