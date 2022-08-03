@@ -2,3 +2,7 @@
   margin: 0;
   padding: 0;
 }
+::selection {
+  color: #fff;
+  background-color: rgb(37, 7, 232);
+}

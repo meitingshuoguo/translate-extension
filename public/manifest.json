@@ -6,8 +6,8 @@
   "content_scripts": [
     {
       "matches": ["http://*/*", "https://*/*"],
-      "js": ["./static/js/content.js"],
-      "css": ["./content.css"]
+      "js": ["./static/js/main.js"],
+      "css": ["./static/css/main.css"]
     }
   ],
   "background": {
